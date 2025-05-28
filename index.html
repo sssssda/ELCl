@@ -17,8 +17,10 @@
     header {
       width: 100%;
       background: #ffffff;
-      padding: 20px;
-      text-align: center;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
     header img.logo {
       height: 50px;
@@ -76,6 +78,10 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        padding: 20px;
+        justify-content: center;
+      }
       .hero-section {
         padding: 30px 20px;
         margin: 20px;
