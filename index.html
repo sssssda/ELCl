@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,13 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ELC Landing</title>
   <link rel="stylesheet" href="styles.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #fff;
+    }
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero_bg.png.png') center/cover no-repeat;
+      padding: 40px 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 130px;
+      margin-bottom: 30px;
+    }
+    .hero-card {
+      background-color: rgba(51, 102, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px 20px;
+      max-width: 800px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card .people {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      max-width: 50%;
+      z-index: 1;
+    }
+    .stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 12px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      z-index: 2;
+      position: relative;
+    }
+    .features {
+      list-style: none;
+      font-size: 18px;
+      z-index: 2;
+      position: relative;
+    }
+    .features li {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .features img, .stat img {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-card {
+        padding: 20px 16px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .features {
+        font-size: 16px;
+      }
+      .hero-card .people {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="hero-section">
-    <header>
-      <img src="images/ELC_logo.png" alt="ELC Logo" class="logo"/>
-    </header>
-    <div class="hero-content">
+    <img src="images/ELC_logo.png" alt="ELC Logo" class="logo"/>
+    <div class="hero-card">
       <div class="stats">
         <div class="stat">
           <img src="images/heart_icon.png" alt="Heart Icon"/>
@@ -23,12 +114,13 @@
           <span>4.9 из 5</span>
         </div>
       </div>
-      <h1>Быстрый английский за 2 месяца</h1>
+      <h1>Быстрый английский<br>за 2 месяца</h1>
       <ul class="features">
         <li><img src="images/lightning_icon.png" alt="Lightning"/> Гарантия результата: +1 уровень за 2 месяца</li>
         <li><img src="images/lightning_icon.png" alt="Lightning"/> Бесплатная консультация с топовым преподавателем ELC</li>
         <li><img src="images/lightning_icon.png" alt="Lightning"/> Составим план обучения</li>
       </ul>
+      <img src="images/a77cd0e6-e7b1-493f-ad2c-91e78df03e69.png" alt="People" class="people"/>
     </div>
   </div>
 </body>
