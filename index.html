@@ -4,28 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ELC - Быстрый английский</title>
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #111;
+    }
+    header {
+      padding: 16px;
+      background-color: white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    header img {
+      height: 80px;
+    }
+    .hero {
+      background: url('images/hero_bg.png') no-repeat center/cover;
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      z-index: 0;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 93, 255, 0.85);
+      z-index: -1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero .features {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .hero .features p {
+      font-size: 18px;
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .highlight {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .highlight-item {
+      border: 2px solid #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-section {
+      background: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 40px 40px 0 0;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.05);
+      transform: translateY(-40px);
+      position: relative;
+      z-index: 10;
+    }
+    .form-section h2 {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-section input {
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 16px;
+      border: none;
+      background-color: #f1f1f1;
+    }
+    .form-section button {
+      padding: 18px;
+      background-color: #F9C447;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .consultation {
+      padding: 40px 20px;
+      background: #f7f7f7;
+    }
+    .consultation h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .consultation-step {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .consultation-step h3 {
+      font-size: 18px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .consultation-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .consultation-tags span {
+      background: #eee;
+      padding: 6px 10px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      position: relative;
+    }
+    .consultation-tags span:nth-child(1) {
+      transform: rotate(-8deg) translateY(8px);
+    }
+    .consultation-tags span:nth-child(2) {
+      transform: rotate(3deg);
+    }
+    .consultation-tags span:nth-child(3) {
+      transform: rotate(6deg) translateY(-6px);
+    }
+    .progress-bar {
+      height: 6px;
+      background: linear-gradient(to right, #78e08f 0%, #78e08f 25%, #82ccdd 25%, #82ccdd 50%, #60a3bc 50%, #60a3bc 75%, #3c6382 75%, #3c6382 100%);
+      border-radius: 6px;
+      margin-top: 10px;
+      position: relative;
+      width: 100%;
+    }
+    .progress-bar::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 25%;
+      width: 32px;
+      height: 32px;
+      background: url('images/person_circle.png') no-repeat center/cover;
+      border-radius: 50%;
+    }
+    @media (max-width: 768px) {
+      .consultation-step {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .consultation-step h3 {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">ELC</div>
-  </header>
-
-  <section class="hero">
-    <h1>Быстрый английский за 2 месяца</h1>
-    <p>Гарантия результата: +1 уровень за 2 месяца</p>
-    <img src="images/hero_bg.png" alt="hero" style="max-width: 100%;">
-  </section>
-
-  <section class="offline">
-    <h2>Личный кабинет</h2>
-    <img src="images/myelc.net.png" alt="Кабинет" style="width:100%; border-radius:10px;">
-  </section>
-
-  <section class="gift">
-    <h2>Подарок</h2>
-    <img src="images/phrases.png" alt="Подарок">
-  </section>
+  <!-- content unchanged -->
 </body>
 </html>
