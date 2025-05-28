@@ -26,12 +26,15 @@
       height: 50px;
       width: auto;
     }
-    .hero-section {
+    .hero-wrapper {
+      width: 100%;
       background: linear-gradient(rgba(0, 84, 255, 0.88), rgba(0, 84, 255, 0.88)), url('images/hero_bg.png.png') center/cover no-repeat;
-      border-radius: 30px;
-      padding: 60px;
+    }
+    .hero-section {
       max-width: 960px;
-      margin: 40px auto;
+      margin: 0 auto;
+      padding: 60px;
+      border-radius: 30px;
       color: #fff;
     }
     .stats {
@@ -84,7 +87,7 @@
       }
       .hero-section {
         padding: 30px 20px;
-        margin: 20px;
+        margin: 0 auto;
       }
       .stats {
         flex-direction: column;
@@ -103,23 +106,25 @@
   <header>
     <img src="images/ELC_logo.png" alt="ELC Logo" class="logo"/>
   </header>
-  <section class="hero-section">
-    <div class="stats">
-      <div class="stat">
-        <img src="images/heart_icon.png" alt="Heart" />
-        <span>10.000+ выпускников</span>
+  <div class="hero-wrapper">
+    <section class="hero-section">
+      <div class="stats">
+        <div class="stat">
+          <img src="images/heart_icon.png" alt="Heart" />
+          <span>10.000+ выпускников</span>
+        </div>
+        <div class="stat">
+          <img src="images/2GIS_logo.png" alt="2GIS" />
+          <span>4.9 из 5</span>
+        </div>
       </div>
-      <div class="stat">
-        <img src="images/2GIS_logo.png" alt="2GIS" />
-        <span>4.9 из 5</span>
-      </div>
-    </div>
-    <h1>Быстрый английский<br>за 2 месяца</h1>
-    <ul class="features">
-      <li><img src="images/lightning_icon.png" alt=""/>Гарантия результата: +1 уровень за 2 месяца</li>
-      <li><img src="images/lightning_icon.png" alt=""/>Бесплатная консультация с топовым преподавателем ELC</li>
-      <li><img src="images/lightning_icon.png" alt=""/>Составим план обучения</li>
-    </ul>
-  </section>
+      <h1>Быстрый английский<br>за 2 месяца</h1>
+      <ul class="features">
+        <li><img src="images/lightning_icon.png" alt=""/>Гарантия результата: +1 уровень за 2 месяца</li>
+        <li><img src="images/lightning_icon.png" alt=""/>Бесплатная консультация с топовым преподавателем ELC</li>
+        <li><img src="images/lightning_icon.png" alt=""/>Составим план обучения</li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>
